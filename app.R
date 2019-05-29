@@ -41,8 +41,10 @@ fungos7$percentage_of_max[is.na(fungos7$percentage_of_max)] <- 100
 
 fungos8 <- fungos7[!is.na(as.numeric(fungos7$wavelength)), ]
 
+fungos8$wavelength <- as.numeric(fungos8$wavelength)
+fungos8$percentage_of_max <- as.numeric(fungos8$percentage_of_max)
 
-
+fungos8 <- fungos8[complete.cases(fungos8),]
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(# Application title
